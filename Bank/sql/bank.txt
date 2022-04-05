@@ -1,0 +1,47 @@
+// tabel create  personal information
+create table info
+    (
+    Customer_id number(30) PRIMARY KEY ,
+    Name varchar2(40) not null,
+    father varchar2(30) not null,
+    day Number(3) not null,
+    month varchar2(20) not null,
+    year varchar2(5) not null,
+   Gender varchar(5) not null,
+   email varchar(30) not null,
+   maritalstatus varchar(20) not null,
+   nationality varchar(30) not null,
+   address varchar2(40) not null,
+   city varchar2(20) not null,
+   pincode varchar2(20) not null,
+   state varchar2(20) not null
+   ); 
+// Create table info1
+create table info1
+  2     (
+  3  customer_id number references info(customer_id),
+  4     religion varchar(20),
+  5      category varchar(20),
+  6     income varchar(20),
+  7      qualification varchar(20),
+  8      occupation varchar(20),
+  9      pan number(20),
+ 10     adhar number(12),
+ 11     senior_citizen varchar(5)
+ 12   );
+// create table info3
+create table info3
+  2  (
+  3  customer_id number references info(customer_id),
+  4  Account_type varchar2(30),
+  5  card_number number(16),
+  6  pin number(5),
+  7  services varchar2(50)
+  8  );
+// logine 
+create table open
+  2  (
+  3  customer_id number references info(customer_id),
+  4  card_no number(16),
+  5  pin number(10)
+  6  );
